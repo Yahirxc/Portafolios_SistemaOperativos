@@ -1,0 +1,95 @@
+import hashlib 
+import subprocess
+
+def ejecutar_comando(comando):
+    try:
+        resultado = mi_subproceso.check_output(comando, shell=True, stderr=mi_subproceso.STDOUT, text=True)
+        return resultado.strip()
+    except mi_subproceso.CalledProcessError as e:
+        return f"Error: {e.output.strip()}"
+
+while True:
+    puntos = 0  # Inicializa tu recorrido en el Jailbreak
+    try:
+        s = input("Jail Scape  ")
+    except KeyboardInterrupt:
+        print("\n¡Abandonas la fuga!")
+        break
+
+    if s.strip() == "ls":
+        print("¿Te aventuras a buscar la llave? (si/no)")
+        try:
+            respuesta = input("Respuesta: ").strip().lower()
+        except KeyboardInterrupt:
+            print("\n¡Adiós!")
+            break
+        
+        if respuesta == "si":
+            try:
+                # Desafío 1
+                print("1. ¿Cuál es el comando para buscar archivos ocultos en Linux?")
+                respuesta = input("Respuesta: ").strip().lower()
+                if respuesta == "ls -a":
+                    print("¡Desbloqueas un logro en tu fuga!")
+                    puntos += 1
+                else:
+                    print("Tus huellas se desvanecen en la oscuridad.")
+
+                # Desafío 2
+                print("2. ¿Cómo se puede ejecutar un comando en segundo plano en Linux?")
+                respuesta = input("Respuesta: ").strip().lower()
+                if respuesta == "&":
+                    print("¡Añades un giro sigiloso a tu escape!")
+                    puntos += 1
+                else:
+                    print("Tu presencia se hace eco en el silencio de la noche.")
+
+                # Desafío 3
+                print("3. ¿Qué información contiene el archivo /etc/passwd en sistemas Linux?")
+                respuesta = input("Respuesta: ").strip().lower()
+                if respuesta == "información de cuentas de usuario":
+                    print("¡Descifras los secretos del archivo /etc/passwd!")
+                    puntos += 1
+                else:
+                    print("Un muro te separa de la verdad oculta.")
+
+                # Desafío 4
+                print("4. ¿Cómo reemplazas texto en archivos usando la herramienta de línea de comandos en Linux?")
+                respuesta = input("Respuesta: ").strip().lower()
+                if respuesta == "sed":
+                    print("¡Te conviertes en el maestro de las cadenas de texto!")
+                    puntos += 1
+                else:
+                    print("Tus habilidades no son lo suficientemente poderosas.")
+
+                # Desafío 5
+                print("5. ¿Cómo otorgas permisos de ejecución a un archivo en Linux?")
+                respuesta = input("Respuesta: ").strip().lower()
+                if respuesta == "chmod +x archivo":
+                    print("¡Alcanzas la maestría en el arte de los permisos!")
+                    puntos += 1
+                else:
+                    print("El permiso te  esquivo como una sombra en la noche.")
+            except KeyboardInterrupt:
+                print("\n¡Abandonas la fuga!")
+                break
+        elif respuesta == "no":
+            print("Entendido, ¿quizás prefieres explorar otros caminos?")
+        else:
+            print("Respuesta no válida. Por favor, responde 'si' o 'no'.")
+            
+    elif s.strip() == "d3598d9fa1f79559db82ef3ecf536f28ef7264f5492953cd883f94a46b7a3989":
+        print("¡Has logrado la fuga!")
+        break
+    else:
+        print("¡ERROR! No has completado la fuga ...")
+
+    print(f"Puntos acumulados: ({puntos}/5)\nContinúa desafiando las sombras...")
+
+    if puntos == 5:
+        print("(5/5) Has completado la fuga exitosamente")
+      
+   
+        llave = "llave"
+        llave_encriptada = mi_hash.sha256(llave.encode()).hexdigest()
+        print("Tu llave:", llave_encriptada)
